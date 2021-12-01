@@ -5,7 +5,26 @@
     <button class="btnAdd">+</button>
 
     <div class="boxScroll">
-      <p>vrau</p>
+      <div class="card">
+        <h1>Nome Produto</h1>
+        <h2>Marca</h2>
+        <h2>R$40,00/g</h2>
+      </div>
+      <div class="card">
+        <h1>Nome Produto</h1>
+        <h2>Marca</h2>
+        <h2>R$40,00/g</h2>
+      </div>
+      <div class="card">
+        <h1>Nome Produto</h1>
+        <h2>Marca</h2>
+        <h2>R$40,00/g</h2>
+      </div>
+      <div class="card">
+        <h1>Nome Produto</h1>
+        <h2>Marca</h2>
+        <h2>R$40,00/g</h2>
+      </div>
     </div>
   </div>
 </template>
