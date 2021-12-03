@@ -61,6 +61,24 @@
         </v-row>
       </v-card>
     </v-dialog>
+
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      :color="alert"
+    >
+      {{ text }}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="blue"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -78,6 +96,10 @@ export default {
       editar: false,
       arrProdutos: {},
       produto: {id: '', nome: '', marca: '', descricao: '', preco: ''},
+      snackbar: false,
+      alert: '#4caf50',
+      text: '',
+      timeout: 2000,
     };
   },
   mounted() {
@@ -98,35 +120,39 @@ export default {
     },
     cadastrarProduto(){
       Produto.cadastrarProduto(this.produto)
-        .then(resposta => {
-          console.log(resposta, 'Adicionado')
+        .then(() => {
+          this.success("Produto adicionado com sucesso!")
           this.listarProdutos()
           this.dialog = false
         })
         .catch(function (error) {
           console.log(error);
+          this.error("Erro ao adicionar produto!")
         })
     },
     editarProduto(){   
       Produto.editarProduto(this.produto)
         .then(() => {
           console.log('Editado')
+          this.success("Produto editado com sucesso!")
           this.listarProdutos()
           this.dialog = false
         })
         .catch(function (error) {
           console.log(error);
+          this.error("Erro ao editar produto!")
         })
     },
     DeletarProduto(){   
       Produto.deletarProduto(this.produto.id)
         .then(() => {
-          console.log('Deletado')
+          this.success("Produto deletado com sucesso!")
           this.listarProdutos()
           this.dialog = false
         })
         .catch(function (error) {
           console.log(error);
+          this.error("Erro ao deletar produto!")
         })
     },
     verMais(i){
@@ -147,11 +173,20 @@ export default {
       Produto.listarProdutos()
         .then(resposta => {
           this.arrProdutos = resposta.data
-          console.log(resposta.data)
         })
         .catch(function (error) {
           console.log(error);
         })
+    },
+    success(text) {
+      this.text = text
+      this.alert = '#4caf50'
+      this.snackbar = true;
+    },
+    error(text) {
+      this.text = text
+      this.alert = '#ff5252'
+      this.snackbar = true;   
     },
   }
 };
