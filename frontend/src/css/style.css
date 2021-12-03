@@ -27,9 +27,20 @@ body {
   bottom: 60px;
 }
 
+.btnSave {
+  background: #0B7258 !important;
+  color: #fff !important;
+}
+
+.btnEdit {
+  background: transparent !important;
+  color: #0B7258 !important;
+  border: 1px solid #0B7258!important;
+}
+
 .box {
   width: 80vw;
-  height: 60vh;
+  height: 75vh;
   background:#0000000a;
   border-radius: 2rem;
   margin: 0 auto;
@@ -92,3 +103,43 @@ body {
   border-radius: .5rem;
 }
 
+.v-card__title {
+  background: #0B7258 !important;
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.input {
+  border: 1px solid #ced4da;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: .8rem;
+  border-radius: .4rem;
+  background: #fff;
+  transition: .2s;
+}
+
+.input:focus, .input:hover {
+  outline: none;
+  border-color: #4B9100;
+  background: #fff;
+  box-shadow: 0 0 0 2px #E4FFC5;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: .5rem;
+  color: #525252;
+}
+
+.btnCard {
+  max-width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
