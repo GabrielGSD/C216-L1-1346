@@ -5,7 +5,7 @@ Implementação do teste prático de C216-L1 (2021/2).
 
 # Entre no pasta middleware
 ```
-cd C216-L1-1417\middleware
+cd C216-L1-1346\middleware
 ```
 
 # Instale as dependências
@@ -28,6 +28,9 @@ Após isso, irá abrir o gerenciador do Cypress. Com isso, basta selecionar o ar
 # Front End desenvolvido em Vue.JS
 
 # Entre na pasta frontend
+```
+cd C216-L1-1346\frontend
+```
 
 ## Instalar as dependências
 ```
