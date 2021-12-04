@@ -53,7 +53,7 @@ npm install
 node index.js
 ```
 
-**4. Para executar os testes**
+**4. Para executar os testes, é necessário abrir um novo terminal no mesmo diretório(\middleware), e rodar o comando abaixo:**
 ```
 npx cypress open
 ```
